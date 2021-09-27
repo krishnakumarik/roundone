@@ -1,0 +1,33 @@
+
+<div class="container" id="app">
+  <div class="row">
+    <h2 class="text-center">Welcome</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <label>1. Please Select</label> &nbsp;&nbsp;
+      <select [(ngModel)]="colorValue">
+        <option disabled>select</option>
+        <option *ngFor="let i of colors" ><span *ngIf="i.value == 1">{{i.key}}</span></option>
+      </select> &nbsp;&nbsp;
+      <button (click)="delete()" class="btn btn-danger">delete</button>
+    </div>
+
+    <div class="col-md-6">   
+
+      <label for="clipboard-example-textarea">2. Please Enter something</label>  &nbsp;&nbsp;
+
+      <input [(ngModel)]="value"> &nbsp;&nbsp;
+      <button cdkCopyToClipboard="{{value}}" class="btn btn-primary">Copy</button>
+
+      <div>
+        <textarea id="clipboard-example-textarea" placeholder="Please paste here" cols="30" rows="3" [(ngModel)]="name"></textarea>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
